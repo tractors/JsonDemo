@@ -1,7 +1,10 @@
 package com.will.jsondemo;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Student {
 
+    @SerializedName("student_name")  //可以重新定义一个名字,做为一个标记
     private String name;
     private int age;
     private Score score;

@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,6 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
         Student[] arrayStudent = gson.fromJson(fromJsonArray,Student[].class);
 
+        List<Student> studentList = new ArrayList<>();
+
+        Type typeStudents = new TypeToken<List<Student>>(){}.getType();
+
+        studentList = gson.fromJson(fromJsonArray,typeStudents);
 
     }
 }
